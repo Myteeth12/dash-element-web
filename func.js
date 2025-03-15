@@ -19,7 +19,7 @@ let main_elements = [];
 let supported_elements = ['p', 'h1', 'h2', 'h3', 'div', 'button', 'textarea'];
 
 
-//Text to HTML function
+//Text to Json
 function textToHtml(stringList){
     let totalElement = 0;
     let overAllElem = [];
@@ -88,7 +88,32 @@ function textToHtml(stringList){
     });
     console.log(`Total element found ${totalElement}.`);
     main_elements = overAllElem;
+    return totalElement;
 };
+//Text to class ( For handling style )
+function dashStyle(stringList){
+    stringList.map((item) => {
+        if(item.includes('/style')){
+            let extract1 = item.split(' ');
+            let extract2 = extract1[0].replace('/style=', '');
+            if(extract2.trim() !== ''){
+                if(el(extract2.trim()) !== null){
+                    let extract3 = extract1[1].split(',');
+                    if(extract3.length > 0){
+                        const refElement = el(extract2.trim());
+                        refElement.className = extract3.join(' ');
+                    } else {
+                        console.error('No class detected.');
+                    }
+                } else {
+                    console.error('Element does not exist!\nPlease try to put an id on the desired element or\nput the style below the referred element');
+                };
+            } else {
+                console.error('No id found.');
+            }
+        }
+    });
+}
 
 //Json to HTML
 function jsonHTML(){
@@ -154,10 +179,17 @@ reload.addEventListener('click', (e) => {
     let editorValue = editor.value.split("\n");
     textToHtml(editorValue);
     jsonHTML();
+    dashStyle(editorValue);
 });
 
 
 //Preload savedtext
 if(localStorage.getItem('savedtext') !== null){
     editor.value = localStorage.getItem('savedtext');
+}
+
+let editorValue = editor.value.split("\n");
+if(textToHtml(editorValue) > 0){
+    jsonHTML();
+    dashStyle(editorValue);
 }
