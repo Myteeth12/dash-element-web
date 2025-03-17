@@ -4,6 +4,13 @@ body {
     background-color: #b9b9b9;
 }
 
+.fullscreen-btn {
+    position: absolute;
+    margin-top: 0.8%;
+    margin-left: 2vw;
+    padding: 0.1rem;
+}
+
 .editor-container {
     position: fixed;
     display: flex;
