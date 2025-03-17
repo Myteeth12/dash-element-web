@@ -1,0 +1,26 @@
+.fullscreen-btn {
+    z-index: 2;
+    width: 3rem;
+    height: auto;
+    padding: 0.3rem;
+    position: absolute;
+    margin-left: 1%;
+    margin-top: 2%;
+    border-style: solid;
+    border-color: #006311;
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: #2c2c2c;
+    color: #bcbcbc;
+    font-size: 1rem;
+    font-family: integralbold;
+    opacity: 0.5;
+}
+.fullscreen-btn img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.fullscreen-btn:hover {
+    opacity: 1;
+}

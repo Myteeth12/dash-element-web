@@ -1,0 +1,9 @@
+@font-face {
+    font-family: integralbold;
+    src: url('./Integral-bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: firacode;
+    src: url(./firacode-regular.ttf) format('truetype');
+}

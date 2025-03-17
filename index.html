@@ -6,17 +6,20 @@
     <title>Speed Element Web</title>
     <link rel="stylesheet" href="./default-styles.css">
     <link rel="stylesheet" href="./tachyons-min.css">
+    <link rel="stylesheet" href="./fonts/font.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="editor-container">
-        <button class="fullscreen-btn" onclick="window.location.href = './fullscreen'">Fullscreen</button>
         <div id="preview"> empty </div>
         <div class="text-editor-container">
             <textarea id="textEditor" placeholder="Type your text here!" wrap="off"></textarea>
             <button id="reloadView">Preview</button>
         </div>
     </div>
+    <button class="fullscreen-btn" onclick="window.location.href = './fullscreen'">
+        <img src="./assets/full.svg">
+    </button>
 </body>
 <script src="func.js" type="module"></script>
 </html>
