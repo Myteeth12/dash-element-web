@@ -22,7 +22,7 @@ Go to the big ass text box to type this:
 --Styling
 /style={the id of an existing element} {classes of tachyons} - this uses the tachyons template for css styles so go to the tachyons website for classes
 
-#Example Usage:
+# Example Usage:
 
 /element=h2
 /value id=titlething
