@@ -19,10 +19,10 @@ Go to the big ass text box to type this:
 {text value inside this element put here}
 -end- #this is important if you don't do this then the element below this won't work
 
-#Styling
+--Styling
 /style={the id of an existing element} {classes of tachyons} - this uses the tachyons template for css styles so go to the tachyons website for classes
 
-Example Usage:
+#Example Usage:
 
 /element=h2
 /value id=titlething
